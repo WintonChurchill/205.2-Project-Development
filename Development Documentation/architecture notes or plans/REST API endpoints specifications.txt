@@ -1,0 +1,5 @@
+Put all rest api endpoints and their requirements (required fields, max lengths, numeric types etc)
+Document all Flask API endpoints: URL, method, expected request payload, response format, status codes.
+
+make some example JSON for GET/POST requests.
+

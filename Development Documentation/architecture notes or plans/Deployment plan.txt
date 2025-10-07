@@ -1,0 +1,4 @@
+deployment
+
+venv -> dev -> testing -> deploy db -> 
+deploy eb1 backend -> test eb1 for issues -> deploy eb2 backend -> test eb2 -> test entire infrastrucure

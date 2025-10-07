@@ -1,0 +1,3 @@
+set up db first before eb1 and 2. load some dummy data for testing, then delete it. 
+
+PostgreSQL, we will be using a dict style of key pairs for our project within pyhon. Preferably, we want our db to match. 

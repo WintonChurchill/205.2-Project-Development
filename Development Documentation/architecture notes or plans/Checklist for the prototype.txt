@@ -1,0 +1,9 @@
+Password hashing algorithm chosen (Werkzeug / Argon2).
+
+CSRF protection in Django forms.
+
+HTTPS requirement for dev/test/prod.
+
+Secrets storage strategy (AWS Secrets Manager / .env).
+
+Stripe key handling and webhook verification.
