@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html> 
+<html lang="en"> 
 <head> 
-    <title>{%block title%}{% endblock %}</title>
     
+    {%block title%}
+        <title>Home Page</title>
+    {% endblock %}
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device,width, initial-scale=1"/>
+
+    <!--CSS connect-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+
 </head>
 <body> 
+ 
     {% block content%}
+        
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#login">Login/Register</a></li>
+    </ul>
+
+
     {% endblock %}
+
 </body>
