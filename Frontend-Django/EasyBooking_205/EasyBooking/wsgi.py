@@ -1,5 +1,5 @@
 """
-WSGI config for EmailSystem project.
+WSGI config for EasyBooking_205 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EmailSystem.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EasyBooking_205.settings')
 
 application = get_wsgi_application()
