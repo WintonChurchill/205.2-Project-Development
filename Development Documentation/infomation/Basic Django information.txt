@@ -1,0 +1,76 @@
+Create Webpages:
+    Define a URL route:
+        edit urls.py (root)
+        path('URL', views.home, name='home'),  # example route
+        # In this case, it would be booking.urls, since it is directing it to the booking application within django (Folder), and 
+        # then to the urls.py file within that application. That means that more code is required in the actual application folder.
+        #-------------------------------------------------------------------------------------------------------------------------
+        # name = home is basically a variable that defines the URL path. That is to say, it simply allows you to make changes later 
+        # without having to rewrite every instance of the url in the file. E.g. if i wanted "/" to become "/home", 
+        # i wouldnt have to change everything (assuming proper use of the name variable)
+
+        django/application/urls.py
+        path('', views.home, name='home'),  # example route
+        # Same as before, but this time for the application itself, it directs the path to the views page. This is what will call
+        # html, as well as any python functions that are being implemented within the application.
+        #
+        # name="NAME" same as line 8
+
+    Creating the view (HTML assignment)
+        Edit views.py
+        def home(request): 
+            return render(request, "main.html")
+        
+        # Request is basically the entire https information that django passes to the client. This means that it is both effectively
+        # parsing html, and doing a REST API request. This is not technically correct, but its a good enough explanation for me
+        # render is the render. it gets passed to the request, and should contain all the important information about the webpage (html
+        # that also links to css -> href="static/main.css")
+
+    Creating a template:
+        app/templates/TEMPLATE_NAME.html
+        # This uses the same syntax as flask {{ }} is for python
+
+Additional info:
+
+Application styles (folders vs single app):
+    You can also define django to be a single app, not multiple apps within individual folders. This can be useful in our usecase, but
+    for the sake of simplicity, i will forego the use of it.
+    Here is how its done according to AI:
+    settings.py:
+        TEMPLATES = [
+            {
+                'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                'DIRS': [BASE_DIR / 'templates'],  # global template folder
+                'APP_DIRS': True,
+                'OPTIONS': {
+                    'context_processors': [
+                        'django.template.context_processors.debug',
+                        'django.template.context_processors.request',
+                        'django.contrib.auth.context_processors.auth',
+                        'django.contrib.messages.context_processors.messages',
+                    ],
+                },
+            },
+        ]
+
+Useful server commands:
+
+    Running the server:
+        python manage.py runserver
+    Starting a new project:
+        django-admin startproject PROJECT_NAME
+    Starting a new app:
+        python manage.py startapp app_name
+    Updating the database:
+        python manage.py migrate
+    Creating a superUser:
+        python manage.py createsuperuser
+    List all URLS in the project:
+        python manage.py show_urls
+    Check for missing dependencies:
+        python manage.py check
+        OR pip -r requirements.txt
+    Collect static files (for deployment):
+        python manage.py collectstatic
+        # Gathers all static files (CSS, JS, images) into one folder for production.
+    

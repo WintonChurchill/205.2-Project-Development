@@ -1,0 +1,124 @@
+Using ted's as a basis (204) i will highlight some big differences between the two.
+
+
+Within views.py:
+{
+from django.shortcuts import render
+
+    DB_ITEMS = [
+        {'id': '1', 'image': 'https://i.postimg.cc/FFYNBdR5/flat-white.jpg', 'name': 'Flat White', 'price': '5.00'},
+        {'id': '2', 'image': 'https://i.postimg.cc/4NtZXDVW/latte.jpg', 'name': 'Latte', 'price': '5.50'},
+        {'id': '3', 'image': 'https://i.postimg.cc/mgs4kmSB/hot-chocolate.jpg', 'name': 'Hot Chocolate', 'price': '5.00'},
+        # ... rest of items]
+
+    def menu(request):
+        # context dictionary: key will be available in template
+        context = {'items': DB_ITEMS}
+        return render(request, 'menu.html', context)
+}
+This is the way that django would handle ted's db implementation. This can be used to similar effect in 205 i hope.
+
+Here is how i can do it using api requests to the Flask backend:
+{
+    def menu(request):
+    response = requests.get('https://api.example.com/bookings/items')
+    items = response.json()  # Flask should return JSON
+    return render(request, 'menu.html', {'items': items})
+}
+
+
+Django also appears to require a CRSF token for any POST forms. This means that 
+
+
+Teds' implementation for django (menu.html)
+{
+
+<!-- Menu Container -->
+<div class="menu_con">
+    {% for item in items %}
+    <div class="card">
+        <img class="card_img" src="{{ item.image }}" alt="">
+        <h1 class="card_name">{{ item.name }}</h1>
+        <p class="price">${{ item.price }}</p>
+
+        <form method="POST" action="{% url 'add_to_cart' %}" target="hidden_iframe">
+            {% csrf_token %}
+            <input type="hidden" name="item_id" value="{{ item.id }}">
+            <label for="qty">Quantity:</label>
+            <select name="qty" id="qty">
+                {% for i in 1|to:10 %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit"></button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+}
+
+
+Here is some more AI info:
+
+Dot notation
+    In Django templates, access dict keys with dot (item.name) rather than item['name'].
+    If you pass a list of Django model instances, dot notation works naturally.
+
+CSRF protection
+    Django requires {% csrf_token %} in POST forms. Flask only needs it if using Flask-WTF.
+
+URL routing
+    Use {% url 'view_name' %} instead of hardcoding paths.
+
+Range in templates
+    Django doesn’t have Python’s range by default. You can use the built-in |slice or write a custom template filter, or simpler:
+    {
+    context = {'items': DB_ITEMS, 'quantities': range(1, 11)}
+    {% for i in quantities %}
+        <option value="{{ i }}">{{ i }}</option>
+    {% endfor %}
+
+    }
+
+
+
+    Similarly, make 100% sure that the api request passes good data, and if it doesn’t, fallback to a backup list.
+    e.g: 
+    {
+    try:
+        response = requests.get('https://api.example.com/items', timeout=5)
+        response.raise_for_status()
+        items = response.json()
+    except (requests.RequestException, ValueError):
+        items = []
+    }
+
+
+
+
+
+                                            TLDR:
+
+
+Make 100% sure that the api request passes good data, and if it doesn’t, fallback to a backup list.
+Use {% url 'view_name' %} instead of hardcoding paths.
+Django doesn’t have Python’s range by default.
+Django appears to require a CRSF token for any POST forms.
+Remember, Flask needs hashing for passwords, its not built in. Maybe use Werkzeug?
+
+
+
+Here is how to use api requests to the Flask backend:
+{
+    try:
+        response = requests.get('https://api.example.com/items', timeout=5)
+        response.raise_for_status()
+        items = response.json()
+        return render(request, 'menu.html', {'items': items})
+    except (requests.RequestException, ValueError):
+        items = []
+}
+this will fail gracefully, but perhaps bump up or down the timeout depending on the final infrastrucure (Const variable for this??)
+also perhaps include a backup template / list that triggers when the info is missing. this can give the user info, including
+api errors.
