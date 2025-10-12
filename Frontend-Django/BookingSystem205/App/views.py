@@ -17,3 +17,6 @@ def Register(request):
 
 def Contact_form(request): 
     return render(request, 'Contact_form.html')
+
+def About_us(request): 
+    return render(request, 'About_us.html')

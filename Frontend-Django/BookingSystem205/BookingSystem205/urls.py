@@ -24,8 +24,7 @@ urlpatterns = [
     path('Contact',views.Contact, name='Contact'),
     path('Login',views.Login, name='Login'),
     path('Register',views.Register, name='Register'),
-    #create about page (12/10/25)
-
+    path('About_us', views.About_us, name="About_us")
 ]
 
 
