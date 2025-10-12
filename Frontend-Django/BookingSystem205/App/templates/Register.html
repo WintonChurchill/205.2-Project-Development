@@ -24,11 +24,12 @@
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#Contact">Contact</a></li>
-        <li><a class="active" href="#login">Login/Register</a></li>
-        <li><a href="#Booking">Booking</a></li>
-
+        <li><a href="{% url 'Home' %}">Home</a></li>
+        <li><a href="{% url 'Contact' %}">Contact</a></li>
+        <li><a class="active" href="{% url 'Register' %}">Login/Register</a></li>
+        <li><a href="{% url 'About_us' %}">About Us</a></li>
+        <!--Booking-->
+    
     </ul>
 
     <h1><bold></bold></h1>
