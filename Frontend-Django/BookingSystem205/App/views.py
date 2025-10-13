@@ -3,10 +3,10 @@ from django. template import loader
 from django.http import HttpResponse
 
 # Create your views here.
-def Home(request):
+def home(request):
     return render(request, 'home.html')
 
-def Contact(request): 
+def contact(request): 
     return render(request, 'contact.html')
 
 def Login(request): 
@@ -18,7 +18,7 @@ def Register(request):
 def Contact_form(request): 
     return render(request, 'Contact_form.html')
 
-def About(request): 
+def about(request): 
     return render(request, 'about.html')
 
 def booking(request): 
