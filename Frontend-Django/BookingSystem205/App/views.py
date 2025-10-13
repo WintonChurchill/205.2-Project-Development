@@ -18,5 +18,10 @@ def Register(request):
 def Contact_form(request): 
     return render(request, 'Contact_form.html')
 
-def About_us(request): 
+def About(request): 
     return render(request, 'about.html')
+
+def booking(request): 
+    return render(request, 'booking.html')
+    
+

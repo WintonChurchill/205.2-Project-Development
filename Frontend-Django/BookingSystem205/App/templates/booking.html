@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link rel="stylesheet" href="{% static 'booking.css' %}">
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">BookingSystem</div>
-        <ul class="navbar-links">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
+
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a class="active" href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'Register' %}">Login/Register</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'booking' %}">Booking</a></li>
+        
+    </ul>
+
     <main class="main-content">
         <h1 class="title">Welcome to the booking Page</h1>
         <p class="para-body">This is rendered from a template.</p>
