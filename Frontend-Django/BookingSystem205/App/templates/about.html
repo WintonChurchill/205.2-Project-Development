@@ -14,6 +14,9 @@
     <!--CSS connect - Main.css-->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
 
+        <!--CSS connect - about.css-->
+    <link rel="stylesheet" href="{% static 'about.css' %}"/>
+
 </head>
 <body> 
  
@@ -28,12 +31,34 @@
         <li><a href="{% url 'contact' %}">Contact</a></li>
         <li><a href="{% url 'Register' %}">Login/Register</a></li>
         <li><a class="active" href="{% url 'about' %}">About Us</a></li>
-
+        <li><a href="{% url 'booking' %}">Booking</a></li>
     </ul>
 
-    <h1><bold>About Us</bold></h1>
+    <!--EasyBooking Title-->
+    <h1 class="title_1">Easy Booking</h1>
 
-    
+    <!--Images-->
+    <img class="image_1" src="{% static 'about_1.jpg'%}">
+
+    <img class="image_2" src="{% static 'about_2.jpg' %}">
+
+    <!--Short Description-->
+    <main class="main-content">
+        <h1 class="title">Why Easy Booking?</h1>
+        <p class="para-body">Locally trusted, and best at offering affordable prices! 
+            <br>
+            <br>
+            Booking now to get an discount of 50%
+            <br>
+            <br>
+            <br>
+        </p>
+
+        <button class="button">
+            Book Now
+        </button>
+
+    </main>
 
     {% endblock %}
 
