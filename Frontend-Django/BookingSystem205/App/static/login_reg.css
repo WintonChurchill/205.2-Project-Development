@@ -7,25 +7,33 @@ body {
 	box-sizing: border-box;
 }
 
+/*Login/register link*/
+.link{
+  font-size:17px;
+  margin-left:25px;
+  margin-top:-20px;
+  text-align:center;
+}
+
 .title_2{
-    background-color: #e28e53;
+    background-color: #B5AE87;
     height:50px;
     color:white;
     size: 100px;
-	box-sizing: border-box;
-}
+  box-sizing:border-box;
+  }
 
 /*Container for login & registeration*/
 .container_2{ 
     width:600px;
     height:420px;
-    background-color: #E48941;
+    background-color: #E8985E;
     margin-left:500px;
-    border-radius:10px;
+   border-radius:25px;
 }
 
 input[type="submit"]:hover{
-  background-color: orangered;
+  background-color: #A9714B;
   color: white;
   font-weight: bold;
 }
@@ -45,14 +53,17 @@ input[type="submit"]{
   margin-bottom: 50%;
 }
 
-/*
-label{
-  color:red;
-  font-size:15px;
-  margin-left:60px;
-  margin-top:-10px;
+/*Login page direct_link*/
+.link_container{
+  background-color:#E8985E;
+  width:600px;
+  height:100px;
+  margin-left:500px;
+  margin-top:-50px;
+  border-radius:25px;
+  text-align:center;
+  font-weight:bold;
 }
-*/
 
 /*label style*/
 .label_custom{
@@ -84,7 +95,7 @@ footer{
     width:100%; 
     background-color:#A9714B;
     color:white;
-    text-align:center;
+    margin-right:5px;
     font-size: large;
     padding-top:4px;
     padding-bottom: 4px;
