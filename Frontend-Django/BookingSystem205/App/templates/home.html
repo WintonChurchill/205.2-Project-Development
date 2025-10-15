@@ -9,7 +9,7 @@
     {% endblock %}
     
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device,width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!--CSS connect - Main-->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
@@ -20,9 +20,8 @@
 </head>
 <body> 
  
-    {% block content%}
-        
     <ul>
+        <!--Work during week (adding icons beside navbar buttons)-->
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
@@ -31,14 +30,21 @@
         <li><a href="{% url 'Register' %}">Login/Register</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
         <li><a href="{% url 'booking' %}">Booking</a></li>
-        
+
     </ul>
 
     <h1><bold>Easy Booking</bold></h1>
 
-    {% endblock %}
+     <div class="main-content">
+        <h2 class="title">Find the perfect solution that meets your needs!</h1>
+        <p class="para-body">We offer a variety of...</p>
 
-   <footer>
+    </div>
+
+        <img class="img" src="{% static 'home-img.png' %}" style="margin-left: 850px; margin-top:-550px;">
+
+
+    <footer>
         <hr style="width:95%;">
         @EasyBooking_2025
     </footer>

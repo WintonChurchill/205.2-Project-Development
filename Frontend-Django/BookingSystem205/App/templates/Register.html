@@ -15,11 +15,11 @@
     <!--CSS connect - Main-->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
 
+    <link rel="stylesheet" href="{% static 'login_reg.css' %}"/>
+
 </head>
 <body> 
- 
-    {% block content%}
-        
+         
     <ul>
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
@@ -33,9 +33,33 @@
     </ul>
 
 
-    <h1><bold></bold></h1>
+    <h1 class="title_2">Register</h1>
 
-    {% endblock %}
+    <!--Register Form-->
+    <div class="container_2">
+      <form action="/templates/Login" method="POST">
+
+        <br>
+        <br> <!--Email Address Label + Input field-->
+        <label class="label_custom">Email Address</label>
+        <br>
+        <input class="field" name="email" placeholder="Enter email address.." required>
+        <!--Password Label + Input field-->
+        <label class="label_custom" >Password</label>
+        <br>
+        <input class="field" name="password" placeholder="Enter password.." required>
+
+        <input type="submit" value="Submit"></input>
+    </form>
+
+    <!--If User already has an account-->
+      <!--Flashing message-->
+
+      <!--add direct url link to next page-->
+
+        <li><a href="{% url 'Login' %}">Login</a></li>
+
+    </div>
 
    <footer>
         <hr style="width:95%;">
