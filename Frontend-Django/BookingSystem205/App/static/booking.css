@@ -7,6 +7,7 @@ body {
 	box-sizing: border-box;
 }
 
+/*Notice: Will be updating this file tomorrow to match "home.css navigation bar!"*/
 .navbar {
 	width: 100vw;
 	height: 8vh;
@@ -35,6 +36,7 @@ body {
 	font-size: 1.5vw;
 	transition: color 0.2s;
 }
+
 .navbar-links li a:hover {
 	color: #ff9800;
 }
@@ -103,4 +105,20 @@ body {
 		font-size: 3vw;
 		padding: 2vw 6vw;
 	}
+}
+
+
+/*Footer - Style*/
+footer{
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width:100%; 
+    background-color:#A9714B;
+    color:white;
+    text-align:center;
+    font-size: large;
+    padding-top:4px;
+    padding-bottom: 4px;
+    height:10%;
 }

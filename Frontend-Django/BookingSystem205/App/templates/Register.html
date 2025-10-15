@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+{% load static %}
+
+<head> 
+        
+    {%block title%}
+        <title>Register Page</title>
+    {% endblock %}
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device,width, initial-scale=1"/>
+
+    <!--CSS connect - Main-->
+    <link rel="stylesheet" href="{% static 'main.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'login_reg.css' %}"/>
+
+</head>
+<body> 
+         
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a class="active" href="{% url 'Register' %}">Login/Register</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'booking' %}">Booking</a></li>
+        
+    </ul>
+
+
+    <h1 class="title_2">Register</h1>
+
+    <!--Register Form-->
+    <div class="container_2">
+      <form action="/templates/Login" method="POST">
+
+        <br>
+        <br> <!--Email Address Label + Input field-->
+        <label class="label_custom">Email Address</label>
+        <br>
+        <input class="field" name="email" placeholder="Enter email address.." required>
+        <!--Password Label + Input field-->
+        <label class="label_custom" >Password</label>
+        <br>
+        <input class="field" name="password" placeholder="Enter password.." required>
+
+        <input type="submit" value="Submit"></input>
+    </form>
+
+    <!--If User already has an account-->
+      <!--Flashing message-->
+
+      <!--add direct url link to next page-->
+
+        <li><a href="{% url 'Login' %}">Login</a></li>
+
+    </div>
+
+   <footer>
+        <hr style="width:95%;">
+        @EasyBooking_2025
+    </footer>
+
+</body>
