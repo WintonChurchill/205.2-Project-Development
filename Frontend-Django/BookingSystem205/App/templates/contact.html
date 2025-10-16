@@ -19,7 +19,6 @@
 
 <body> 
     
-    {% block content%}
     <ul>
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
@@ -34,12 +33,49 @@
 
 
  <!--Contact Form + Details-->
- 
-    {% endblock %}
+     <h1>Contact Us</h1>
+
+     <!--Image-->
+    <div class="contact_img" >
+        <img src="https://iili.io/KkNUft4.jpg">
+     </div>
+
+     <!--contact form-->
+     <div class="container_contactfrm">
+        <form action="/templates/Login" method="POST">
+            
+            <br>
+            <label class="label">Name</label>
+            <br>
+            <input class="field" placeholder="Enter Name..."></input>
+
+            <br>
+            
+            <label class="label" >Subject of Message</label>
+            <select class="field" name="Booking_options">
+                <option value="Quote">Quote</option>
+                <option value="Refunds">Refund</option>
+                <option value="Any Questions">Any Questions</option>
+
+            </select>
+            <br>
+
+            <label class="label">Enter Message Below:</label>
+            <br>
+            <textarea class="field">
+
+            </textarea>
+            <br>
+            <!--Submit Button-->
+            <input type="submit" value="Submit"></input>
+            
+        </form>
+     </div>
+
 
    <footer>
         <hr style="width:95%;">
-        @EasyBooking_2025s
+        @EasyBooking_2025
     </footer>
     
 </body>
