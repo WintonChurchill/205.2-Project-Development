@@ -7,6 +7,7 @@ body {
 	box-sizing: border-box;
 }
 
+
 h1{
     background-color: #7BB6E0;
     height:50px;
@@ -15,44 +16,129 @@ h1{
     text-align:center;
 }
 
-/*Home container*/
-.main-content {
-	width: 90vw;
-	max-width: 700px;
-	margin: 5vh auto 0 auto;
-	padding: 2vw;
-	background: #fff;
-	border-radius: 1vw;
-	box-shadow: 0 0.5vw 2vw rgba(0,0,0,0.08);
-	min-height: 70vh;
-	margin-right: 670px;
-	border-color: #e8985e;
-	border-width:10px;
+.nav_bar{
+	background-color:white;
+	color:black;
 }
 
+.img_1{
+	margin-left:850px;
+	margin-top:30px;
+}
 
-.container{
-	width:90vw;
-	max-width:500px;
+/*Main container contains Containter + Image*/
+.main_container{
+	position:relative;
+}
+
+/*Home container*/
+.main-content {
+	position:absolute;
+	width: 95vw;
+	max-width: 375px;
 	margin: 5vh auto 0 auto;
 	padding: 2vw;
 	background: #fff;
+	color:black;
 	border-radius: 1vw;
-	border-color: burlywood;
-	min-height: 70vh;
+	min-height: 45vh;
+	margin-left: 475px;
+	border-color: #e8985e;
+	border-style:solid;
+	border-width:4px;
+	height:50px;
+	top:10px;
+}
+
+input[type="Find"]{
+  width: 70%;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-style:solid;
+  border: 4px;
+  border-color:brown;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15%;
+  margin-bottom: 20%;
+  margin-top:-70%;
+  text-align:center;
+}
+
+input[type="Find"]:hover{
+  background-color: #6BE3E8;
+  color: white;
+  font-weight: bold;
+}
+
+.input_field{
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: left;
+  margin-top:20px;
+  margin-left:50px;
 }
 
 .title {
-	font-size: 3vw;
+	font-size: 1.5vw;
 	margin-bottom: 2vh;
 	text-align: center;
+	color:black;
+}
+
+.label_home{
+    color:black;
+    font-size:15px;
+    margin-left:86px;
+    font-weight:bold;
+	text-align:center;
 }
 
 .para-body {
-	font-size: 1.5vw;
+	font-size: 1.2vw;
 	text-align: center;
 	margin-bottom: 4vh;
 }
+
+.body_para{
+	font-size:30px;
+	margin-right:130px;
+	font-weight:bold;
+	color:black;
+}
+
+
+.display_1{
+	margin-right:950px;
+	margin-top:-450px;
+}
+
+.display_2{
+	margin-right:950px;
+	margin-top:50px;
+}
+
+.display_3{
+	margin-right:970px;
+	margin-top:50px;
+}
+
+.display_img1{
+	margin-right:920px;
+	margin-top:-300px;
+	width:100px;
+	height:100px;
+}
+
 
 @media (max-width: 900px) {
 	.main-content {

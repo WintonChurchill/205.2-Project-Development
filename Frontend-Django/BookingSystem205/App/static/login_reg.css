@@ -7,14 +7,6 @@ body {
 	box-sizing: border-box;
 }
 
-/*Login/register link*/
-.link{
-  font-size:17px;
-  margin-left:25px;
-  margin-top:-20px;
-  text-align:center;
-}
-
 .title_2{
     background-color: #B5AE87;
     height:50px;
@@ -28,8 +20,8 @@ body {
     width:600px;
     height:420px;
     background-color: #E8985E;
-    margin-left:500px;
-   border-radius:25px;
+    margin-right: 200px;
+    border-radius:25px;
 }
 
 input[type="submit"]:hover{
@@ -55,11 +47,11 @@ input[type="submit"]{
 
 /*Login page direct_link*/
 .link_container{
-  background-color:#E8985E;
+   background-color:#E8985E;
   width:600px;
   height:100px;
-  margin-left:500px;
-  margin-top:-50px;
+  margin-right:200px;
+  margin-top: -60px;
   border-radius:25px;
   text-align:center;
   font-weight:bold;
@@ -75,7 +67,7 @@ input[type="submit"]{
 
 /*Field for labels inside Login/Register Form*/
 .field{
-  width: 70%;
+  width: 50%;
   padding: 10px;
   margin-bottom: 40px;
   border: 1px solid #ccc;
