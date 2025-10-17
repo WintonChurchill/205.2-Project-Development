@@ -1,23 +1,93 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'contact.css' %}">
+
+    {%block title%}
+        <title>Contact Page</title>
+    {% endblock %}
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device,width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="{% static 'main.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'contact.css' %}"/>
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
-<body>
-    <nav class="navbar">
-        <div class="navbar-brand">BookingSystem</div>
-        <ul class="navbar-links">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
-    <main class="main-content">
-        <h1 class="title">Welcome to the contact Page</h1>
-        <p class="para-body">This is rendered from a template.</p>
-    </main>
+
+<body> 
+    
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
+        <li><a class="active" href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
+        <li><a href="{% url 'Register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
+        <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
+
+    </ul>
+
+
+ <!--Contact Form + Details-->
+     <h1>Contact Us</h1>
+
+     <!--Contact Form-->
+     <div class="container_contactfrm">
+        <form action="/" method="POST">
+            
+            <br>
+            <label class="label">Name</label>
+            <br>
+            <input class="field" placeholder="Enter Name..."></input>
+
+            <br>
+            
+            <label class="label" >Subject of Message</label>
+            <select class="field" name="Booking_options">
+                <option value="Quote">Quote</option>
+                <option value="Refunds">Refund</option>
+                <option value="Any Questions">Any Questions</option>
+
+            </select>
+            <br>
+
+            <label class="label">Enter Message Below:</label>
+            <br>
+            <textarea class="field">
+
+            </textarea>
+            <br>
+
+            <!--Submit Button-->
+            <input type="submit" value="Submit"></input>
+            
+        </form>
+     </div>
+
+    <!--Image-->
+    <div class="contact_img" >
+        <img class="contact_img" src="https://i.postimg.cc/PxH0c0H6/contact-2.jpg">
+     </div>
+
+    <!--Contact Image and Message-->
+    <div class="message">
+        <p>Fill in the form here! <br> 
+        and we will get back to you within 3 business days!</p>
+    </div> 
+
+   <footer>
+        <hr style="width:95%;">
+        @EasyBooking_2025
+    </footer>
+    
 </body>
 </html>

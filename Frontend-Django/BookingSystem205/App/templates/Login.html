@@ -1,34 +1,29 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html>
 {% load static %}
 
-<head> 
-        
+<head>
+
     {%block title%}
-        <title>About Us Page</title>
+        <title>Login Page</title>
     {% endblock %}
     
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device,width, initial-scale=1"/>
 
-    <!--CSS connect - Main.css-->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
 
-        <!--CSS connect - about.css-->
-    <link rel="stylesheet" href="{% static 'about.css' %}"/>
+    <link rel="stylesheet" href="{% static 'login_reg.css' %}"/>
 
     <!--Font Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
      crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
 
 </head>
+
 <body> 
- 
-    {% block content%}
     
-    <!--Navigation bar buttons-->
     <ul>
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
@@ -36,42 +31,46 @@
         <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
         <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
         <li><a href="{% url 'Register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
-        <li><a class="active" href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
         <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
 
+        
     </ul>
+    
+    <!--Title-->
+    <h1 class="title_2">Login</h1>
 
-    <!--EasyBooking Title-->
-    <h1 class="title_1">Easy Booking</h1>
+    <!--Login Form-->
+    <div class="container_2">
+      <form method="POST">
 
-    <!--Images-->
-    <img class="image_1" src="{% static 'about_1.jpg'%}">
+        <br>
+        <br> <!--Email Address Label + Input field-->
+        <label class="label_custom">Email Address</label>
+        <br>
+        <input class="field" name="email" placeholder="Enter email address.." required>
 
-    <img class="image_2" src="{% static 'about_2.jpg' %}">
+        <!--Password Label + Input field-->
+        <label class="label_custom" >Password</label>
+        <br>
+        <input class="field" name="password" placeholder="Enter password.." required>
 
-    <!--Short Description-->
-    <main class="main-content">
-        <h1 class="title">Why Easy Booking?</h1>
-        <p class="para-body">Locally trusted, and best at offering affordable prices! 
-            <br>
-            <br> 
-            Book now to get an discount of 50%
-            <br>
-            <br>
-            <br>
-        </p>
+        <input type="submit" value="Submit"></input>
+    </form>
 
-        <button class="button">
-            Book Now
-        </button>
+    <br>
+    </div>
+    
+    <!--Direct url link to Login page-->
+  <div class="link_container">
+        <p>Don't have an account yet?</p>
+        <a href="{% url 'Register' %}">Register</a>
+    </div>
 
-    </main>
-
-    {% endblock %}
-
-    <footer>
+   <footer>
         <hr style="width:95%;">
         @EasyBooking_2025
     </footer>
+
 </body>
 </html>

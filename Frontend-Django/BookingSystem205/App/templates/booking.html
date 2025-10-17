@@ -4,21 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+
     <link rel="stylesheet" href="{% static 'booking.css' %}">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">BookingSystem</div>
-        <ul class="navbar-links">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
+
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
+        <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
+        <li><a href="{% url 'Register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
+        <li><a class="active" href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
+
+        
+    </ul>
+
     <main class="main-content">
         <h1 class="title">Welcome to the booking Page</h1>
         <p class="para-body">This is rendered from a template.</p>
 
+    <img src="{% static 'about_1.jpg' %}">
+        <img src="{% static 'about_2.jpg' %}">
+
     </main>
+
+    <footer>
+        <hr style="width:95%;">
+        @EasyBooking_2025
+    </footer>
+
 </body>
 </html>

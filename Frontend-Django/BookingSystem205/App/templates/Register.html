@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+{% load static %}
+
+<head> 
+        
+    {%block title%}
+        <title>Register Page</title>
+    {% endblock %}
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device,width, initial-scale=1"/>
+
+    <!--CSS connect - Main-->
+    <link rel="stylesheet" href="{% static 'main.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'login_reg.css' %}"/>
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body> 
+         
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
+        <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
+        <li><a class="active" href="{% url 'Register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
+        <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
+
+        
+    </ul>
+
+    <!--Title-->
+    <h1 class="title_2">Register</h1>
+
+    <!--Register Form-->
+    <div class="container_2">
+        <form method="POST">
+            <br>
+            <br>
+
+            <!--Email address label + input field-->
+            <label class="label_custom">Email address</label>
+            <br>
+            <input class="field" name="email" placeholder="Enter email address.." required>
+
+            <!--Password Label + Input field-->
+            <label class="label_custom" >Password</label>
+            <br>
+            <input class="field" name="password" placeholder="Enter password.." required>
+
+            <!--Submit Button-->
+            <input type="submit" value="Submit"></input>
+            <br>
+            <br>
+
+            <p>Already have an account?</p>
+
+        </form>
+    </div>
+
+
+
+        <!--Direct url link to Login page-->
+  <div class="link_container">
+        <p>Already have an account? </p>
+        <a href="{% url 'Login' %}">Login</a>
+    </div>
+
+   <footer>
+        <hr style="width:95%;">
+        @EasyBooking_2025
+    </footer>
+
+</body>
