@@ -1,3 +1,10 @@
-**/.venv/
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore all nested venv folders in subdirectories
 **/venv/
-infomation/
+**/.venv/
+
+# Ignore information directory
+information/
