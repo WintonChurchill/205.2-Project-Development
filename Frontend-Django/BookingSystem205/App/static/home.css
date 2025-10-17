@@ -7,12 +7,18 @@ body {
 	box-sizing: border-box;
 }
 
+
 h1{
     background-color: #7BB6E0;
     height:50px;
     color:white;
     size: 100px;
     text-align:center;
+}
+
+.nav_bar{
+	background-color:white;
+	color:black;
 }
 
 .img_1{
