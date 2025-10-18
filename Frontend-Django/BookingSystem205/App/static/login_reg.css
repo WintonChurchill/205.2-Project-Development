@@ -67,7 +67,7 @@ input[type="submit"]{
 
 /*Field for labels inside Login/Register Form*/
 .field{
-  width: 50%;
+  width: 70%;
   padding: 10px;
   margin-bottom: 40px;
   border: 1px solid #ccc;
