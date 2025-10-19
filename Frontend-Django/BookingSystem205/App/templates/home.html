@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"> 
+{% load static %}
+
+<head> 
+        
+    {%block title%}
+        <title>Home Page</title>
+    {% endblock %}
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--CSS connect - Main-->
+    <link rel="stylesheet" href="{% static 'main.css' %}"/>
+
+    <!--CSS connect - home.css -->
+    <link rel="stylesheet" href="{% static 'home.css' %}"/>
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body> 
+ 
+    <ul>
+        <!--Logo-->
+        <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
+
+        <li><a class="active" href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
+        <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
+        <li><a href="{% url 'Register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
+        <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
+
+    </ul>
+
+    <script srcipt src="htts://kit.fontawesome.com/4a7657588f.js" crossorigin="anonymous"></script>
+
+    <h1><bold>Easy Booking</bold></h>
+
+
+    <div class="main_container">
+        
+        
+
+        <div class="main-content">
+            <h2 class="title">Find the perfect solution for your needs!</h1>
+            <p class="para-body">We offer a variety of spaces <br> that are suitable for any type of event.</p>
+            
+            <label class="label_home">Enter Location</label>
+            <input class="input_field" placeholder="Location.."></input>
+
+            <input type="Find" value="Find my space!"></input>
+        </div>
+    
+        <div>
+            <img class="img_1" src="{% static 'home-img.png' %}">
+        </div>
+
+        <br>
+        <!--Note: 17/10/25 I just need to adjust the icons to be aligned with the text then this page will be completed this afternoon-->
+        <!--Contact Us-->
+        <div class="display_1">
+            <img src="https://i.postimg.cc/9XqB65yD/contact-us.png" style=" width:100px; height:100px; margin-bottom:-80px; margin-right:400px;">
+            <p class="body_para">Contact Us</p>
+        </div>
+
+        <!--Flexible-->
+        <div class="display_2">
+            <img class="display_img2" src="https://i.postimg.cc/NGrx3qR5/flexible.png" style=" width:100px; height:100px; margin-bottom:-80px; margin-right:400px;">
+            <p class="body_para"> Flexible</p>
+        </div>
+
+        <!--Locally Truested-->
+        <div class="display_3">
+            <img class="display_img3" src="https://i.postimg.cc/SQzGBFcR/locally-trusted.png" style=" width:100px; height:100px; margin-bottom:-80px; margin-right:400px;">
+            <p class="body_para" style="margin-left:100px; margin-top:10px;"> Locally trusted</p>
+        </div>
+
+    </div>
+    
+
+    <footer>
+        <hr style="width:95%;">
+        @EasyBooking 2025
+    </footer>
+
+</body>
