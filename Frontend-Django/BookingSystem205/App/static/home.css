@@ -1,3 +1,4 @@
+/*Main body of code style*/
 body {
 	margin: 0;
 	padding: 0;
@@ -7,7 +8,7 @@ body {
 	box-sizing: border-box;
 }
 
-
+/*Heading 1 style*/
 h1{
     background-color: #7BB6E0;
     height:50px;
@@ -16,11 +17,13 @@ h1{
     text-align:center;
 }
 
+/*nav-bar*/
 .nav_bar{
 	background-color:white;
 	color:black;
 }
 
+/*main home page*/
 .img_1{
 	margin-left:850px;
 	margin-top:30px;
@@ -50,50 +53,42 @@ h1{
 	top:10px;
 }
 
-input[type="Find"]{
-  width: 70%;
-  padding: 10px;
+/*button main */
+.button{
   background-color: white;
+  border: none;
   color: black;
-  border-style:solid;
-  border: 4px;
-  border-color:brown;
-  border-radius: 4px;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
-  font-weight: bold;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 15%;
-  margin-bottom: 20%;
-  margin-top:-70%;
-  text-align:center;
+  width:70%;
 }
 
-input[type="Find"]:hover{
-  background-color: #6BE3E8;
-  color: white;
-  font-weight: bold;
+/*Main button - border color*/
+.button1 {
+	border: 2px solid #7BB6E0;
 }
 
-.input_field{
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 40px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  text-align: left;
-  margin-top:20px;
-  margin-left:50px;
+/*Main button - hover colours*/
+.button1:hover{
+	background-color: #7BB6E0;
+	color:white;
+	font-weight: bold;
 }
 
+/*title style*/
 .title {
 	font-size: 1.5vw;
 	margin-bottom: 2vh;
 	text-align: center;
 	color:black;
 }
+
 
 .label_home{
     color:black;
@@ -103,12 +98,14 @@ input[type="Find"]:hover{
 	text-align:center;
 }
 
+/**/
 .para-body {
 	font-size: 1.2vw;
 	text-align: center;
 	margin-bottom: 4vh;
 }
 
+/**/
 .body_para{
 	font-size:30px;
 	margin-right:130px;
@@ -116,17 +113,19 @@ input[type="Find"]:hover{
 	color:black;
 }
 
-
+/*Display text only - Contact Us*/
 .display_1{
-	margin-right:950px;
+	margin-right:955px;
 	margin-top:-450px;
 }
 
+/*Display text only - Flexible*/
 .display_2{
 	margin-right:950px;
 	margin-top:50px;
 }
 
+/*Display text only - Locally trusted*/
 .display_3{
 	margin-right:970px;
 	margin-top:50px;
@@ -139,6 +138,17 @@ input[type="Find"]:hover{
 	height:100px;
 }
 
+/*Login page direct_link*/
+.link_container{
+  background-color:#E8985E;
+  width:600px;
+  height:100px;
+  margin-left:500px;
+  margin-top: -60px;
+  border-radius:25px;
+  text-align:center;
+  font-weight:bold;
+}
 
 @media (max-width: 900px) {
 	.main-content {
