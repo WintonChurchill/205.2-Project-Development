@@ -1,12 +1,12 @@
 from flask import Flask #import flask library 
-from flask_mail import Mail, Message 
+from flask_mail import Mail, Message #easy and simple method to send email
 
 app = Flask(__name__)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'florence.taele@gmail.com'
-app.config['MAIL_PASSWORD'] = 'oxwd hxux yiuj oshv'
+app.config['MAIL_PASSWORD'] = '**** **** **** ****'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False 
 mail = Mail(app)
