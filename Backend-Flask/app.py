@@ -1,12 +1,13 @@
 from flask import Flask #import flask library 
 from flask_mail import Mail, Message #easy and simple method to send email
+from flask import render_template
 
 app = Flask(__name__)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'florence.taele@gmail.com'
-app.config['MAIL_PASSWORD'] = '**** **** **** ****'
+app.config['MAIL_PASSWORD'] = 'oxwd hxux yiuj oshv'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False 
 mail = Mail(app)
@@ -21,6 +22,10 @@ def index():
     msg.body = "Hey, sending you this email from my flask app, let me know if it works!"
     mail.send(msg)
     return "Message sent succesfully!"
+
+@app.route('/contact', methods=['GET'])
+def contact(): 
+    return render_template('contact.html')
     
 if __name__ == '__main__': 
     app.run(debug=True)
