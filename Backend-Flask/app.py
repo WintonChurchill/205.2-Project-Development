@@ -1,6 +1,6 @@
 from flask import Flask #import flask library 
 from flask_mail import Mail, Message #easy and simple method to send email
-from flask import render_template
+from flask import render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 
@@ -23,9 +23,15 @@ def index():
     mail.send(msg)
     return "Message sent succesfully!"
 
-@app.route('/contact', methods=['GET'])
+@app.route('/contact', methods=['GET','POST'])
 def contact(): 
-    return render_template('contact.html')
+    if request.method == 'POST': 
+        name = request.form['name']
+        message = request.form['message']
+        #Add server-side validation or processing here!
+        flash('Thank you for submitting your message!')
+        return redirect(url_for('contact1'))
+    return render_template('contact1.html')
     
 if __name__ == '__main__': 
     app.run(debug=True)
