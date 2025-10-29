@@ -55,6 +55,7 @@ pythonnet==3.0.5
 pytz==2025.2
 pywin32==311
 PyYAML==6.0.2
+resend==0.5.2
 requests==2.32.4
 secure-smtplib==0.1.1
 semantic-version==2.10.0
