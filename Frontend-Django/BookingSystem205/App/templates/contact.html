@@ -46,10 +46,9 @@
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="6a7b44eb-2b90-4e83-acf4-2e96aaaf3cb8">
             <br>
-            <label class="label">Name</label>
-            <br>
-            <input class="field" name="name" placeholder="Enter Name..."></input>
-
+            <label class="label">Email</label>
+            <br><!--Email validation check-->
+            <input type="email" class="field" placeholder="example@gmail.com" autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"  size="25" title="valid email needed (example@gmail.com)" required></input> 
             <br>
             
             <label class="label" >Subject of Message</label>
@@ -63,7 +62,7 @@
 
             <label class="label">Enter Message Below:</label>
             <br>
-            <textarea name="message" class="field">
+            <textarea name="message" required class="field">
 
             </textarea>
             <br>
