@@ -43,8 +43,21 @@
 
     <!--Register Form-->
     <div class="container_2">
-        <form method="POST" enctype="multipart/form-data">
+
+        {% if messages %}
+            {% for message in messages %}
+                {% if messages.tags == 'error' %}
+                <center><h4 style="color: firebrick;">{{message}}</h4></center>
+                {% else %}
+                <center><h4 style="color: dodgerblue;">{{message}}</h4></center>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            
             {% csrf_token %}
+
             <br>
             <br>
 
