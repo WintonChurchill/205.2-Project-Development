@@ -24,9 +24,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('main', views.main, name='main'),
     path('contact',views.contact, name='contact'),
-    path('Login', views.login_user, name='Login'),
-    path('Register',views.Register, name='Register'),
+    path('login/', views.LoginView, name='login'),
+    path('register/',views.RegisterView, name='register'),
     path('about', views.about, name="about"),
     path('booking', views.booking, name="booking"),
-    path('logincopy', views.Logincopy, name="Logincopy")
 ]

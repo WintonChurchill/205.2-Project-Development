@@ -52,16 +52,16 @@ def RegisterView(request):
             user_data_has_error = True 
             messages.error(request, 'Password must be at least 8 characters long')
 
-        if not user_data_has_error: 
+        if user_data_has_error: 
+            return redirect('register')
+        else:
             new_user = User.objects.create_user(
                 email = email, 
                 password = password
             )
             messages.success(request, 'Account created. Login Now!')
-            return redirect('Login.html')
-        else: 
-            return HttpResponse(request, 'Register.html')
-
+            return redirect('login')
+    return render(request, 'register.html')
     
 
 def Contact_form(request): 
