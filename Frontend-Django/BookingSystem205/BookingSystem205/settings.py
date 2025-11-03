@@ -33,7 +33,7 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER='florence.taele@gmail.com'
-EMAIL_HOST_PASSWORD='**** **** **** ****'#Hidden for security purpose!
+EMAIL_HOST_PASSWORD='oxwd hxux yiuj oshv'#Hidden for security purpose!
 DEFAULT_FROM_EMAIL="florence.taele@gmail.com"
 
 # Application definition
@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'App'
+    'App',
+    "accounts"
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ STATICFILES_DIRS = [BASE_DIR / 'App' / 'static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/"#Login
+LOGOUT_REDIRECT_URL = "/"#Logout

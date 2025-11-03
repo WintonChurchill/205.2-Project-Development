@@ -39,23 +39,28 @@
     
     <!--Title-->
     <h1 class="title_2">Login</h1>
-
+        
     <!--Login Form-->
     <div class="container_2">
-      <form method="POST" enctype="multipart/form-data">
-        <br>
-        <br> <!--Email Address Label + Input field-->
-        <label class="label_custom">Email Address</label>
-        <br>
-        <input type="email" class="field" name="email" placeholder="email@gmail.com" autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" >
-        <br>
-        <!--Password Label + Input field-->
-        <label class="label_custom" >Password</label>
-        <br>
-        <input class="field" type="password" name="password" placeholder="Enter password.."  maxlength="8" required>
 
-        <input type="submit" value="Submit"></input><br>
-        <a href='reset_password'>Forgot Password?</a>
+        <form method="POST" enctype="multipart/form-data">
+        
+            {% csrf_token %}
+            <br>
+            <br> <!--Email Address Label + Input field-->
+            <label class="label_custom">Email Address</label>
+            
+            <br>
+            <input type="email" class="field" name="email" placeholder="email@gmail.com" autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" >
+            <br>
+        
+            <!--Password Label + Input field-->
+            <label class="label_custom" >Password</label>
+            <br>
+            <input class="field" type="password" name="password" placeholder="Enter password.."  maxlength="13" required>
+
+            <input type="submit" value="Login"></input><br>
+            <a href='reset_password'>Forgot Password?</a>
     </form>
 
     <br>
