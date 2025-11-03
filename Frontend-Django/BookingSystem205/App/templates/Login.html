@@ -48,14 +48,15 @@
         <br> <!--Email Address Label + Input field-->
         <label class="label_custom">Email Address</label>
         <br>
-        <input class="field" name="email" placeholder="Enter email address.." required>
+        <input class="field" name="email" placeholder="email@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         <br>
         <!--Password Label + Input field-->
         <label class="label_custom" >Password</label>
         <br>
-        <input class="field" name="password" placeholder="Enter password.." required>
+        <input class="field" type="password" name="password" placeholder="Enter password.."  maxlength="8" required>
 
         <input type="submit" value="Submit"></input>
+        <a href='reset_password'>Forgot Password?</a>
     </form>
 
     <br>

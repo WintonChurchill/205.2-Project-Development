@@ -47,13 +47,28 @@ body {
   width: 70%;
   padding: 10px;
   margin-bottom: 40px;
-  border: 1px solid #ccc;
+  border: 3px solid gray;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
   text-align: left;
   margin-top:20px;
   margin-left:86px;
+}
+
+
+.field:user-valid[type='email']{
+border-color:green;
+border-width:5px;
+}
+
+.field:user-invalid[type='email']{
+border-color:red;
+border-width: 5px;
+}
+
+.red{
+  color: red;
 }
 
 input[type="submit"]{
@@ -70,6 +85,7 @@ input[type="submit"]{
   margin-left: 15%;
   margin-bottom: 50%;
   margin-top:-10%;
+  text-align: center;
 }
 
 input[type="submit"]:hover{
