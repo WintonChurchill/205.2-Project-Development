@@ -8,3 +8,4 @@ venv/
 
 # Ignore information directory
 information/
+**__pycache__/
