@@ -7,7 +7,7 @@
     {%block title%}
         <title>Home Page</title>
     {% endblock %}
-    
+
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -31,13 +31,32 @@
 
         <li><a class="active" href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
         <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
-        <li><a href="{% url 'register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
+        <li><a href="{% url 'signup' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
         <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
         <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
 
     </ul>
 
     <script srcipt src="htts://kit.fontawesome.com/4a7657588f.js" crossorigin="anonymous"></script>
+
+    <!--Functional Parts only (will be fixing up overall appearance later on this week!)-->
+    <!--Welcome User, once they have logged in!-->
+    {% block content %}
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }} Thanks. for logging in. 
+        </p>
+        <a href="{% url 'password_change' %}">Password Change</a>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+    {% else %}
+    <p style="color:red; font-weight: bold;">You are not Logged In!</p>
+    <!--Password Reset-->
+    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    {% endblock %}
 
     <h1><bold>Easy Booking</bold></h>
 
@@ -81,7 +100,7 @@
     <!--Footer-->
     <footer>
         <hr style="width:95%;">
-        @EasyBooking 2025
+        &copy;EasyBooking_2025
     </footer>
 
 </body>
