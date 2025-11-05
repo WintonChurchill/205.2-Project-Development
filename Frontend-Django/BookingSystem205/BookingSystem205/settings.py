@@ -82,17 +82,30 @@ WSGI_APPLICATION = 'BookingSystem205.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'default_db_name'),
-        'USER': os.environ.get('DB_USER', 'default_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'default_password'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+if DEBUG:
+    # Development defaults
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': '502-server',
+            'USER': 'postgres',
+            'PASSWORD': '1',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
-
+else:
+    # Production / environment variables
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DB_PASSWORD'),
+            'HOST': os.environ.get('DB_HOST'),
+            'PORT': os.environ.get('DB_PORT', '5432'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -135,3 +148,4 @@ STATICFILES_DIRS = [BASE_DIR / 'App' / 'static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
