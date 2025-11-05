@@ -67,6 +67,7 @@ def Contact_form(request):
     return render(request, 'Contact_form.html')
 
 #Complete
+#Complete
 def about(request): 
     return render(request, 'about.html')
 
