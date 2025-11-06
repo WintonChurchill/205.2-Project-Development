@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 {% load static %}
+
 {% load widget_tweaks %}
 
 <head> 
@@ -57,39 +58,40 @@
         {% endif %}
         
         <form method="POST">
-<<<<<<<< HEAD:Frontend-Django/BookingSystem205/App/templates/registration/signup.html
-
             <br>
-            <br>
-
-            {% csrf_token %}
-            {{ form }}
             
-            
-========
             {% csrf_token %}
-            <br>
-            <br>
+            
+            <!--Add or Remove TEST FIRST!-->
 
-            <!--Username-->
-            <label class="label_custom">Username</label>
-            <br>
-            <input type="username" class="field" name="email" placeholder="username" required>
+            <!--Form components-->
+            <!--Username Label-->
+            <label for="exampleInputUsername" class="label_custom">Username</label>
+            <!--add short descriptions!-->
+            
+            <!--Username Input Field-->
+            <div class="field" style="background-color: white;">
+                {% render_field form.username placeholder="Username" type="text" id="exampleInputUsername" %}
+            </div>
+            
+            <!--Password_1 Label-->
+            <label for="Password_label" class="label_custom" >Password</label>
 
-            <br>
+            <!--Password Input Field-->
+            <div class="field" style="background-color: white;">
+                {% render_field form.password1 placeholder="Password" type="password" class="form-control" %}
+            </div>
 
-            <!--Email address label + input field-->
-            <label class="label_custom">Email Address</label>
-            <br>
-            <input type="email" class="field" name="email" placeholder="email@gmail.com"  autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"  required>
+            <!--Confirmation Password Label-->
+            <label for="Password_label" class="label_custom">Confirm Password</label>
 
-            <br>
+            <!--Confirmation of Password-->
+            <div class="field" style="background-color: white;"> 
+                {% render_field form.password2 placeholder="Confirm Password" type="password" class="form-control" %}
+            </div>
 
-            <!--Password Label + Input field-->
-            <label class="label_custom" >Password</label>
-            <br>
-            <input class="field" type="password" name="password" placeholder="Enter password.." maxlength="11" required>
->>>>>>>> 4b238ad153d90f5e24fbb41bf4e3a8589f669b52:Frontend-Django/BookingSystem205/App/templates/registration/register.html
+            {% render_field form.name placeholder="Username" class="form-control" %}
+            {% render_field form.password placeholder="Passwod" class="form-control"%}
 
             <!--Submit Button-->
             <input type="submit" value="Submit"></input>
@@ -97,12 +99,8 @@
             <br>
 
             <p>Already have an account?</p>
-
         </form>
-    {% endblock %}
     </div>
-
-
 
         <!--Direct url link to Login page-->
   <div class="link_container">

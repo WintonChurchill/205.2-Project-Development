@@ -18,11 +18,11 @@ from django.views.generic import CreateView
 def home(request):
     return render(request, 'home.html')
 
+def signup(request): 
+    return redirect(request, 'signup.html')
+
 def contact(request): 
     return render(request, 'contact.html')
-
-def signupcopy(request): 
-    return redirect(request, 'signup copy.html')
 
 #In-progress (03/11/25)
 def LoginView(request): 

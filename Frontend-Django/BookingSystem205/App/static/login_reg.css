@@ -29,9 +29,9 @@ body {
 /*Container for login & registeration*/
 .container_2{ 
     width:600px;
-    height:420px;
+    height:480px;
     background-color: #E8985E;
-    margin-left: 500px;
+    margin-left: 550px;
     border-radius:25px;
 }
 
@@ -62,7 +62,7 @@ input[type="submit"]{
   width:600px;
   height:100px;
   margin-left:500px;
-  margin-bottom: -50px;
+  margin-bottom: -90px;
   border-radius:25px;
   text-align:center;
   font-weight:bold;
@@ -74,6 +74,7 @@ input[type="submit"]{
   font-size:15px;
   margin-left:86px;
   font-weight:bold;
+  content:center;
 }
 
 /*Field for labels inside Login/Register Form*/
@@ -86,6 +87,7 @@ input[type="submit"]{
   box-sizing: border-box;
   font-size: 16px;
   text-align: left;
+  background-color: white;
   margin-top:20px;
   margin-left:86px;
 }

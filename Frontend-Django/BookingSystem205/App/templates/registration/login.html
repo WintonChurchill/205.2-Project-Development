@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{% load widget_tweaks %}
 {% load static %}
 
 <head>
@@ -47,20 +48,34 @@
             <br>
             <br>
             {% csrf_token %}
-            {{ form }}
+            <!--{{ form }}-->
+
+            <!--Username Label-->
+            <label for="exampleInputUsername" class="label_custom">Username</label>
+            <!--add short descriptions!-->
             
-            <p>Don't have an account yet?</p>
+            <!--Username Input Field-->
+            <div class="field" style="background-color: white;">
+                {% render_field form.username placeholder="Username" type="text" id="exampleInputUsername" %}
+            </div>
+            
+            <!--Password_1 Label-->
+            <label for="exampleInputPassword" class="label_custom" >Password</label>
+            
+            <div class="field" style="background-color: white;">
+                {% render_field form.password placeholder="Password" type="text" id="exampleInputPassword" class="form-control" %}
+            </div>
+
+            <input type="submit" value="Login"></input><br>
+                <p>Don't have an account yet?</p>
             <a href="{% url 'signup' %}">Register</a>
 
-            <!--Edit Login/Signup Form-->
-            <!--Edit Later on with .css file using {widget-tweaks}-->
-           
-            <input type="submit" value="Login"></input><br>
-            <!--Don't Have an account yet-->
-
     </form>
-
-    <br>
+    </div>
+    
+    <div class="link_container">
+            <p>Don't have an account yet?</p>
+            <a href="{% url 'signup' %}">Register</a>
     </div>
 
    <footer>

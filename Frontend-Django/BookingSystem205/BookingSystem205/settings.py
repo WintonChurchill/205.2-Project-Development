@@ -39,15 +39,16 @@ DEFAULT_FROM_EMAIL="florence.taele@gmail.com"
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.admin',#Django Admin website
+    'django.contrib.auth',#Django authentication and authorization framework! - used for signup/login forms
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'App',
-    "accounts",
-    'widget_tweaks'
+    'App',#Main app for project
+    "accounts",#Stores user accounts settings 
+    'widget_tweaks',#Customize generic form provided by Django
+    'django_password_eye'#Used to allow user to hide password
 ]
 
 MIDDLEWARE = [
