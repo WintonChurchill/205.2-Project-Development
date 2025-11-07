@@ -79,7 +79,7 @@
 
             <!--Password Input Field-->
             <div class="field" style="background-color: white;">
-                {% render_field form.password1 placeholder="Password" type="password" class="form-control" %}
+                {% render_field form.password1 placeholder="Password" type="password" class="form-control" style="-webkit-text-security: circle" %}
             </div>
 
             <!--Confirmation Password Label-->
@@ -87,7 +87,7 @@
 
             <!--Confirmation of Password-->
             <div class="field" style="background-color: white;"> 
-                {% render_field form.password2 placeholder="Confirm Password" type="password" class="form-control" %}
+                {% render_field form.password2 placeholder="Confirm Password" type="password" class="form-control" style="-webkit-text-security: circle" %}
             </div>
 
             {% render_field form.name placeholder="Username" class="form-control" %}
