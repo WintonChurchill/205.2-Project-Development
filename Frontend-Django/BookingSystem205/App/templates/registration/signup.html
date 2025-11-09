@@ -42,58 +42,29 @@
 
     <!--added  Flash Messages HERE!-->
     <!--In-progress add container to place this inside-->
-    <div class="container" >
-        
-    <!--Welcome User, once they have logged in!-->
     {% block content %}
     {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }} Thanks. for logging in. 
-        </p>
-        <a href="{% url 'password_change' %}">Password Change</a>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Log out</button>
-    </form>
+         Hi {user.username} You are now registered!
+
     {% else %}
-    <p style="color:red; font-weight: bold;">You are not Logged In!</p>
-    <!--Password Reset-->
-    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
-    <!--Login Link-->
-    <a href="{% url 'login' %}">Login</a>
-    <!--User can signup-->
-    <p>Don't Have an accont?</p>
-    <a href="{% url 'signup' %}">Sign Up</a>
+
+    <p style="color:red; font-weight: bold;">You are not registered!</p>
     {% endif %}
     {% endblock %}
-    </div>
 
     <!--Title-->
     <h1 class="title_2" >Register</h1>
 
     <!--Register Form-->
     <div class="container_2">
-
-        <!--Flash Message for validation checks-->
-        {% if messages %}
-            {% for message in messages %}
-                {% if messages.tags == 'error' %}
-                <center><h4 style="color: firebrick;">{{message}}</h4></center><!--Registered!-->
-                {% else %}
-                <center><h4 style="color: dodgerblue;">{{message}}</h4></center><!--Email Already Exists-->
-                {% endif %}
-            {% endfor %}
-        {% endif %}
         
-        <form method="POST">
+        <form method="POST" action="/accounts/signup/">
             <br>
             
             {% csrf_token %}
-            
-            <!--Add or Remove TEST FIRST!-->
-
-            <!--Form components-->
+     
             <!--Username Label-->
-            <label for="exampleInputUsername" class="label_custom">Username</label>
+            <label for="exampleInputEmail" class="label_custom">Username</label>
             <!--add short descriptions!-->
             
             <!--Username Input Field-->
@@ -116,9 +87,6 @@
             <div class="field" style="background-color: white;"> 
                 {% render_field form.password2 placeholder="Confirm Password" type="password" class="form-control" style="-webkit-text-security: circle" %}
             </div>
-
-            {% render_field form.name placeholder="Username" class="form-control" %}
-            {% render_field form.password placeholder="Passwod" class="form-control"%}
 
             <!--Submit Button-->
             <input type="submit" value="Submit"></input>
