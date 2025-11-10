@@ -44,7 +44,7 @@
     <!--Login Form-->
     <div class="container_2">
 
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST">
             <br>
             <br>
             {% csrf_token %}
@@ -67,6 +67,7 @@
             </div>
 
             <input type="submit" value="Login"></input><br>
+                        <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
                 <p>Don't have an account yet?</p>
             <a href="{% url 'signup' %}">Register</a>
 

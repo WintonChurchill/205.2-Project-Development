@@ -29,38 +29,38 @@
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
-        <li><a class="active" href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
-        <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
-        <li><a href="{% url 'signup' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
-        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
-        <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
+        <li><a class="active" href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i> Home</a></li>
+        <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i> Contact</a></li>
+        <li><a href="{% url 'signup' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i> Login/Register</a></li>
+        <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i> About Us</a></li>
+        <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i> Booking</a></li>
 
     </ul>
 
     <script srcipt src="htts://kit.fontawesome.com/4a7657588f.js" crossorigin="anonymous"></script>
 
-    <!--Functional Parts only (will be fixing up overall appearance later on this week!)-->
-    <!--Welcome User, once they have logged in!-->
     {% block content %}
     {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }} Thanks. for logging in. 
-        </p>
-        <a href="{% url 'password_change' %}">Password Change</a>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Log out</button>
-    </form>
+         Hi {{user.username}} You have succesfuly logged in!
+        
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+        </form>
+
     {% else %}
-    <p style="color:red; font-weight: bold;">You are not Logged In!</p>
-    <!--Password Reset-->
-    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+    <!--Login Link-->
     <a href="{% url 'login' %}">Login</a>
+    <!--User can signup-->
+    <p>Don't Have an accont?</p>
+    <a href="{% url 'signup' %}">Sign Up</a>
+
     {% endif %}
     {% endblock %}
 
     <h1><bold>Easy Booking</bold></h>
 
-
+        <!--Welcome User, once they have logged in!-->
     <div class="main_container">
         
         <div class="main-content">

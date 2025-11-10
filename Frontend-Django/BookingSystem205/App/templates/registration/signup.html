@@ -40,25 +40,41 @@
         
     </ul>
 
-    <!--added  Flash Messages HERE!-->
-    <!--In-progress add container to place this inside-->
+  <!--Welcome User, once they have logged in!-->
     {% block content %}
     {% if user.is_authenticated %}
-         Hi {user.username} You are now registered!
-
+        <p>Welcome, {{ user.username }} Thanks. for logging in. 
+        </p>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
     {% else %}
-
-    <p style="color:red; font-weight: bold;">You are not registered!</p>
+    <p style="color:red; font-weight: bold;">You are not Logged In!</p>
+    <!--Password Reset-->
+    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+    <!--Login Link-->
+    <a href="{% url 'login' %}">Login</a>
+    <!--User can signup-->
+    <p>Don't Have an accont?</p>
+    <a href="{% url 'signup' %}">Sign Up</a>
     {% endif %}
     {% endblock %}
 
     <!--Title-->
-    <h1 class="title_2" >Register</h1>
+    <h1 class="title_2" >Sign Up</h1>
+    
+    {% for msg in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Congratulations!</strong>{{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
 
     <!--Register Form-->
     <div class="container_2">
         
-        <form method="POST" action="/accounts/signup/">
+        <form method="POST">
             <br>
             
             {% csrf_token %}
