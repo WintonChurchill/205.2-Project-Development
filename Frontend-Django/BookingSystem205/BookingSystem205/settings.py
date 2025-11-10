@@ -39,13 +39,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.admin',#Django Admin website
+    'django.contrib.auth',#Django authentication and authorization framework! - used for signup/login forms
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'App'
+    'App',#Main app for project
+    "accounts",#Stores user accounts settings 
+    'widget_tweaks',#Customize generic form provided by Django
+    'django_password_eye'#Used to allow user to hide password
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,9 @@ STATICFILES_DIRS = [BASE_DIR / 'App' / 'static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/"#Login
+LOGOUT_REDIRECT_URL = "/"#Logout
+
+#Email_Backend 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

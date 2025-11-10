@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 {% load static %}
+
 {% load widget_tweaks %}
 
 <head> 
@@ -39,61 +40,69 @@
         
     </ul>
 
-    <!--Title-->
-<<<<<<<< HEAD:Frontend-Django/BookingSystem205/App/templates/registration/signup.html
+  <!--Welcome User, once they have logged in!-->
     {% block content %}
-========
->>>>>>>> 4b238ad153d90f5e24fbb41bf4e3a8589f669b52:Frontend-Django/BookingSystem205/App/templates/registration/register.html
-    <h1 class="title_2" >Register</h1>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }} Thanks. for logging in. 
+        </p>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+    {% else %}
+    <p style="color:red; font-weight: bold;">You are not Logged In!</p>
+    <!--Password Reset-->
+    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+    <!--Login Link-->
+    <a href="{% url 'login' %}">Login</a>
+    <!--User can signup-->
+    <p>Don't Have an accont?</p>
+    <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+    {% endblock %}
+
+    <!--Title-->
+    <h1 class="title_2" >Sign Up</h1>
+    
+    {% for msg in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Congratulations!</strong>{{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
 
     <!--Register Form-->
     <div class="container_2">
-
-        <!--Flash Message for validation checks-->
-        {% if messages %}
-            {% for message in messages %}
-                {% if messages.tags == 'error' %}
-                <center><h4 style="color: firebrick;">{{message}}</h4></center><!--Registered!-->
-                {% else %}
-                <center><h4 style="color: dodgerblue;">{{message}}</h4></center><!--Email Already Exists-->
-                {% endif %}
-            {% endfor %}
-        {% endif %}
         
         <form method="POST">
-<<<<<<<< HEAD:Frontend-Django/BookingSystem205/App/templates/registration/signup.html
-
             <br>
-            <br>
-
-            {% csrf_token %}
-            {{ form }}
             
-            
-========
             {% csrf_token %}
-            <br>
-            <br>
+     
+            <!--Username Label-->
+            <label for="exampleInputEmail" class="label_custom">Username</label>
+            <!--add short descriptions!-->
+            
+            <!--Username Input Field-->
+            <div class="field" style="background-color: white;">
+                {% render_field form.username placeholder="Username" type="text" id="exampleInputUsername" %}
+            </div>
+            
+            <!--Password_1 Label-->
+            <label for="Password_label" class="label_custom" >Password</label>
 
-            <!--Username-->
-            <label class="label_custom">Username</label>
-            <br>
-            <input type="username" class="field" name="email" placeholder="username" required>
+            <!--Password Input Field-->
+            <div class="field" style="background-color: white;">
+                {% render_field form.password1 placeholder="Password" type="password" class="form-control" style="-webkit-text-security: circle" %}
+            </div>
 
-            <br>
+            <!--Confirmation Password Label-->
+            <label for="Password_label" class="label_custom">Confirm Password</label>
 
-            <!--Email address label + input field-->
-            <label class="label_custom">Email Address</label>
-            <br>
-            <input type="email" class="field" name="email" placeholder="email@gmail.com"  autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"  required>
-
-            <br>
-
-            <!--Password Label + Input field-->
-            <label class="label_custom" >Password</label>
-            <br>
-            <input class="field" type="password" name="password" placeholder="Enter password.." maxlength="11" required>
->>>>>>>> 4b238ad153d90f5e24fbb41bf4e3a8589f669b52:Frontend-Django/BookingSystem205/App/templates/registration/register.html
+            <!--Confirmation of Password-->
+            <div class="field" style="background-color: white;"> 
+                {% render_field form.password2 placeholder="Confirm Password" type="password" class="form-control" style="-webkit-text-security: circle" %}
+            </div>
 
             <!--Submit Button-->
             <input type="submit" value="Submit"></input>
@@ -101,12 +110,8 @@
             <br>
 
             <p>Already have an account?</p>
-
         </form>
-    {% endblock %}
     </div>
-
-
 
         <!--Direct url link to Login page-->
   <div class="link_container">
