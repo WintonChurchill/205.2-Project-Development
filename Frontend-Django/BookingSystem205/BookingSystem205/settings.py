@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',#Main app for project
-    "accounts",#Stores user accounts settings 
     'widget_tweaks',#Customize generic form provided by Django
     'django_password_eye'#Used to allow user to hide password
 ]
@@ -137,5 +136,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "/"#Login
 LOGOUT_REDIRECT_URL = "/"#Logout
 
-#Email_Backend 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+LOGIN_URL = 'login'
+
+#Email verification 
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=465
+EMAIL_USER_SSL=True
+EMAIL_HOST_USER="florence.taele@gmail.com"
+EMAIL_HOST_PASSWORD="wltc nsiv fycz dlny"#Collect from app passwords
+#Hide when pushing to Github branch and send update to team member about what I have done instead! 

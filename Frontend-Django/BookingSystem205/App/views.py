@@ -2,24 +2,19 @@ from django.shortcuts import render
 from django. template import loader 
 from django.http import HttpResponse
 
-#extra django libraries to complete forgot password / reset password feature ! 
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User 
-from django.contrib import messages 
-from django.contrib.auth import authenticate, login, logout 
-from django.core.mail import send_mail
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages 
+from django.conf import settings 
+from django.core.mail import EmailMessage
+from django.utils import timezone 
+from django.urls import reverse
+from .models import * 
 
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy  
-from django.views.generic import CreateView
-from django.contrib import messages
-from django.shortcuts import render, request
 
-#Clean up files as well / commenting etc..
-
-# Create your views here.
-@login_required
+#@login_required add later on
 def home(request):
     return render(request, 'home.html')
 
@@ -61,11 +56,9 @@ def RegisterView(request):
                 password = password
             )
             messages.success(request, 'Account created succesfully!')
-            return redirect('login')
+            return redirect('login1')
         else: 
-            return redirect('register')
-
-    return render(request, 'register.html')
+            return redirect('register1')
 
     return render(request, 'register1.html')
 
@@ -83,9 +76,9 @@ def LoginView(request):
             return redirect('home')
         else: 
             messages.error(request, "Invalid login credentials")
-            return redirect('login')
+            return redirect('login1')
 
-    return render(request, 'Login.html')
+    return render(request, 'login1.html')
 
 #completed and working
 def LogoutView(request): 
@@ -94,9 +87,6 @@ def LogoutView(request):
     return redirect('login')
 
 
-
-def signup(request): 
-    return redirect(request, 'signup.html')
 
 def contact(request): 
     return render(request, 'contact.html')
@@ -116,15 +106,15 @@ def LoginView(request):
     
         else: 
             messages.error(request, "Invalid login credentials")
-            return redirect('login')
+            return redirect('login1')
 
-    return render(request, 'Login.html')
+    return render(request, 'Login1.html')
 
 
 #Incomplete
 def LogoutView(request): 
     logout(request)
-    return redirect('login')
+    return redirect('login1')
 
 #Incomplete
 def ForgotPassword(request): 
