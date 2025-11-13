@@ -138,10 +138,3 @@ LOGOUT_REDIRECT_URL = "/"#Logout
 
 LOGIN_URL = 'login'
 
-#Email verification 
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=465
-EMAIL_USE_SSL=True
-EMAIL_HOST_USER="florence.taele@gmail.com"
-EMAIL_HOST_PASSWORD="wltc nsiv fycz dlny"#Collect from app passwords
-#Hide when pushing to Github branch and send update to team member about what I have done instead! 
