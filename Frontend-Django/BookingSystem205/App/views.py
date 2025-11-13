@@ -16,13 +16,7 @@ from .models import *
 
 @login_required 
 def home(request):
-
     return render(request, 'home.html')
-
-#IMPORTANT NOTICE: due to I had tested our project via a new register system outside of this project, 
-#I will be completing the rest of the copying of the new files, modifying and completed by tomorrow during class time 
-#Only part left is to test everything in new project and also forgot password feature 
-#will provide screenshots proof work completed for testin on 12/11/25
 
 #new Register page - working (edit and final test tomorrow during class time!)
 def RegisterView(request): 

@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',#Main app for project
-    'widget_tweaks',#Customize generic form provided by Django
-    'django_password_eye'#Used to allow user to hide password
 ]
 
 MIDDLEWARE = [
