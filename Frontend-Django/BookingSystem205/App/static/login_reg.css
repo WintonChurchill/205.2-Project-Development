@@ -7,6 +7,13 @@ body {
 	box-sizing: border-box;
 }
 
+
+/*nav-bar*/
+.nav_bar{
+	background-color:white;
+	color:black;
+}
+
 .title_2{
     background-color: #B5AE87;
     height:50px;
@@ -117,4 +124,65 @@ footer{
     padding-top:4px;
     padding-bottom: 4px;
     height:10%;
+}
+
+.signup_link{
+  margin: 30px 0;
+  text-align:center;
+  font-size: 16px;
+  color:burlywood;
+}
+
+.h1{
+  content:center;
+  font-weight:bold;
+}
+
+.signup_link{
+  margin: 30px 0;
+  text-align:center;
+  font-size: 16px;
+  color:burlywood;
+}
+
+
+.signup_link a{
+  color:#2691d9;
+  text-decoration: none;
+}
+
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.txt_field input{
+  width:70%;
+  padding: 0 5px;
+  height: 40px;
+  font-size:16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events:none;
+  transition: .5s;
+}
+
+.txt_field input:focus ~ label, 
+.txt_field input:valid ~ label{
+  top:-5px;
+  color:#2691d9;
 }
