@@ -92,19 +92,23 @@ def LogoutView(request):
 def contact(request): 
     return render(request, 'contact.html')
 
+#completed - Login view
 def LoginView(request): 
     if request.method == 'POST': 
         #collect user input from front-end
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        #user authentication
         user = authenticate(request, username=username, password=password)
 
+        #if user credentials are existing, user will be redirected to 'home' page
         if user is not None: 
             login(request, user)
 
             return redirect('home')
-    
+
+        #if user credentials are not existing an invalid login credentials will show via (flash messages)
         else: 
             messages.error(request, "Invalid login credentials")
             return redirect('login')
@@ -112,15 +116,14 @@ def LoginView(request):
     return render(request, 'Login1.html')
 
 
-#Incomplete
 def LogoutView(request): 
     logout(request)
     return redirect('login')
 
-#Incomplete
+#Not-functional
 def ForgotPassword(request): 
 
-    if request.method == 'POST':
+    if request.method == "POST":
         email = request.POST.get('email')
 
         try: 
@@ -131,6 +134,8 @@ def ForgotPassword(request):
 
             password_reset_url = reverse('reset-password', kwargs={'reset_id': new_password_reset.reset_id})
 
+            messages.success(request, f"Email found!")
+            
             email_body = f'Reset your password using the link below: \n\n\n{password_reset_url}',
 
             email_message = EmailMessage(
@@ -200,13 +205,8 @@ def ResetPassword(request, reset_id):
                 #redirect back to password reset page and display errors 
                 return redirect('reset-password', reset_id=reset_id)
 
-    #            return render(request, 'reset_password.html' )
+    #  return render(request, 'reset_password.html' )
 
-#Complete
-def Contact_form(request): 
-    return render(request, 'Contact_form.html')
-
-#Complete
 #Complete
 def about(request): 
     return render(request, 'about.html')

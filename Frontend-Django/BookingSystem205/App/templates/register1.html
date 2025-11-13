@@ -53,34 +53,49 @@
 
             <form method="POST"> 
 
+                <!-- what is this token for? -->
                 {% csrf_token %}
 
-                    <!--add correct fields according to customized fields already added!-->
+                <!--div container for (Username label, input, placeholder)-->
                 <div class="txt_field">
                     <input type="text" required name="username"> 
                     <span></span>
                     <label>Username</label>
                 </div>
-                
-                <div class="txt_field"><!--add verification if enough time this evening and push all work to github!-->
+                                
+                <!--div container for (email label, input, placeholder)-->
+                <div class="txt_field">
                     <input type="email" required name="email"> 
                     <span></span>
                     <label>Email</label>
                 </div>
 
+                <!--div container for (Password label, input, placeholder)-->
                 <div class="txt_field">
                     <input type="password" required name="password">
                     <span></span>
                     <label>Password</label>
                 </div>
                 
-                <input type="submit" value="Register">
-                <div class="signup_link"> 
+                <!--Submit button (Register)-->
+                <input type="submit" value="Register"><br>
+                
+                <!--Extra links for redirecting user to login-->
+                <div class="link_container">
                     Already have an account? <a href="{% url 'login' %}">Login</a>
+                    <br>
+                    <br>
+                        <a href="{% url 'logout' %}">Logout</a>
                 </div>
+
             </form>
         </div>
 
+     <!--Footer-->
+    <footer>
+        <hr style="width:95%;">
+        &copy;EasyBooking_2025
+    </footer>
 
     </body>
 </html>
