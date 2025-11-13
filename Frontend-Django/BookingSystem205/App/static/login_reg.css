@@ -65,11 +65,9 @@ input[type="submit"]{
 
 /*Login page direct_link*/
 .link_container{
-   background-color:#E8985E;
+  background-color:#E8985E;
   width:600px;
   height:100px;
-  margin-left:500px;
-  margin-bottom: -90px;
   border-radius:25px;
   text-align:center;
   font-weight:bold;
@@ -126,33 +124,10 @@ footer{
     height:10%;
 }
 
-.signup_link{
-  margin: 30px 0;
-  text-align:center;
-  font-size: 16px;
-  color:burlywood;
-}
 
 .h1{
   content:center;
   font-weight:bold;
-}
-
-.signup_link{
-  margin: 30px 0;
-  text-align:center;
-  font-size: 16px;
-  color:burlywood;
-}
-
-
-.signup_link a{
-  color:#2691d9;
-  text-decoration: none;
-}
-
-.signup_link a:hover{
-  text-decoration: underline;
 }
 
 form .txt_field{

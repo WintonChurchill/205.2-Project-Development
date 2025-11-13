@@ -70,18 +70,20 @@
                     <span></span>
                     <label>Password</label>
                 </div>
-                
+
+                <br>
+                <br>
+
                 <!--Submit button (Login)-->
                 <input type="submit" value="Login">
                 
-                <div class="link_container">
+                <div class="link_container" style="margin-left:1px; margin-top:-200px;">
                     Don't have an account? <a href="{% url 'register' %}">Register</a>
                     <p>Forgot your password <a href="{% url 'forgot-password' %}">Reset Password</a><!--Not working-->
                     <br>
                     <br>
                         <a href="{% url 'logout' %}">Logout</a>
                 </div>
-
             </form>
         </div>
 
