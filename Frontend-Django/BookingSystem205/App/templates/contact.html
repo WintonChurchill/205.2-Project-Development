@@ -10,9 +10,11 @@
     
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device,width, initial-scale=1"/>
-
+    
+    <!--Main.css - file that stores navigation bar and all other styles used across all pages-->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
 
+    <!--contact.css - specifically designed for the contact page-->
     <link rel="stylesheet" href="{% static 'contact.css' %}"/>
 
     <!--Font Awesome Icons-->
@@ -28,9 +30,10 @@
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
+        <!--Navigation bars and buttons-->
         <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i> Home</a></li>
         <li><a class="active" href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i> Contact</a></li>
-        <li><a href="{% url 'signup' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i> Login/Register</a></li>
+        <li><a href="{% url 'register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i> Login/Register</a></li>
         <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i> About Us</a></li>
         <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i> Booking</a></li>
 
@@ -62,9 +65,10 @@
             </select>
             <br>
 
+            <!--label message-->
             <label class="label">Enter Message Below:</label>
             <br>
-            <textarea name="message" required class="field">
+            <textarea name="message" required class="field"><!--text-area for message in contact form-->
 
             </textarea>
             <br>
@@ -86,6 +90,7 @@
         and we will get back to you within 3 business days!</p>
     </div> 
 
+    <!--Footer-->
    <footer>
         <hr style="width:95%;">
         &copy;EasyBooking_2025

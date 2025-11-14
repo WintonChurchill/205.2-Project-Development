@@ -46,9 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',#Main app for project
-    "accounts",#Stores user accounts settings 
-    'widget_tweaks',#Customize generic form provided by Django
-    'django_password_eye'#Used to allow user to hide password
 ]
 
 MIDDLEWARE = [
@@ -134,8 +131,5 @@ STATICFILES_DIRS = [BASE_DIR / 'App' / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "/"#Login
-LOGOUT_REDIRECT_URL = "/"#Logout
+LOGIN_URL = 'login'#Login url
 
-#Email_Backend 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
