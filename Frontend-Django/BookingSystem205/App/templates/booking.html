@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     
+    <!--Main.css - file that stores navigation bar and all other styles used across all pages-->
     <link rel="stylesheet" href="{% static 'main.css' %}">
 
+    <!--booking.css - designed for all elements inside the booking.html file-->
     <link rel="stylesheet" href="{% static 'booking.css' %}">
 
     <!--Font Awesome Icons-->
@@ -21,6 +23,7 @@
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
+        <!--Navigation bar + buttons-->
         <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i> Home</a></li>
         <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i> Contact</a></li>
         <li><a href="{% url 'register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i> Login/Register</a></li>
@@ -29,9 +32,9 @@
 
         
     </ul>
-
+    <!--Main content section (title and paragraph)-->
     <main class="main-content">
-        <h1 class="title">Welcome to the booking Page</h1>
+        <h1 class="title">Welcome to the Booking Page</h1>
         <p class="para-body">This is rendered from a template.</p>
 
     <img src="{% static 'about_1.jpg' %}">
@@ -39,6 +42,7 @@
 
     </main>
 
+    <!--Footer-->
     <footer>
         <hr style="width:95%;">
         &copy;EasyBooking_2025

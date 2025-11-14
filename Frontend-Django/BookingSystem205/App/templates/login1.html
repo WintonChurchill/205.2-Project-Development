@@ -30,31 +30,35 @@
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
 
-        <!--Navigation Bars-->
+        <!--Navigation Bar + Buttons-->
         <li><a href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i>Home</a></li>
         <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i>Contact</a></li>
         <li><a class="active" href="{% url 'register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i>Login/Register</a></li>
         <li><a href="{% url 'about' %}" style="border:solid black;"><i class="fa-solid fa-circle-info" style="color:aqua"></i>About Us</a></li>
         <li><a href="{% url 'booking' %}" style="border:solid black;"><i class="fa-solid fa-calendar" style="color:aqua"></i>Booking</a></li>
     </ul>
-    
 
+        <!--Login Container and content-->
         <div class="container_2">
             <h1>Login</h1>
 
             <!--Flash messages-->
             {% if messages %}
                 {% for message in messages %}
-                    {% if message.tags == 'error'%}
+                    {% if message.tags == 'error'%}<!--{message} representing an error message-->
                         <center><h4 style="color: firebrick">{{message}}</h4></center>
-                    {% else %}
-                        <center><h4 style="color: dodgerblue">{{message}}</h4></center>
+                    {% else %}<!--{message} represneting an succesful message-->
+                        <center><h4 style="color: green">{{message}}</h4></center>
                     {% endif %}
                 {% endfor %}
             {% endif %}
 
+            <!--Login Form-->
             <form method="POST"> 
                 
+                <!-- (used to prevent Cross-Site Request Forgery attacks!) -->
+                <!--used for when user logs in or new session starts-->
+                <!--creating an user's server-side session-->
                 {% csrf_token %}
 
                 <!--div container for (username label, input, placeholder)-->
@@ -77,11 +81,11 @@
                 <!--Submit button (Login)-->
                 <input type="submit" value="Login">
                 
+                <!--seperate container to store (register 'url link')-->
                 <div class="link_container" style="margin-left:1px; margin-top:-200px;">
-                    Don't have an account? <a href="{% url 'register' %}">Register</a>
-                    <p>Forgot your password <a href="{% url 'forgot-password' %}">Reset Password</a><!--Not working-->
+                    Don't have an account? <a href="{% url 'register' %}">Register</a><!--Register 'url' link-->
                     <br>
-                    <br>
+                    <br> <!--Logout link-->
                         <a href="{% url 'logout' %}">Logout</a>
                 </div>
             </form>

@@ -26,7 +26,8 @@
     <ul>
         <!--Logo-->
         <img src="https://i.postimg.cc/YCpDt5fF/Screenshot-2025-10-10-001046.jpg" width="70px" height="70px" margin-left="20%">
-
+        
+        <!--Navigation Bar + Buttons-->
         <li><a class="active" href="{% url 'home' %}" style="border:solid black;"><i class="fa-solid fa-house" style="color:aqua;"></i> Home</a></li>
         <li><a href="{% url 'contact' %}" style="border:solid black;"><i class="fa-solid fa-envelope" style="color:aqua"></i> Contact</a></li>
         <li><a href="{% url 'register' %}" style="border:solid black;"><i class="fa-solid fa-user" style="color:aqua"></i> Login/Register</a></li>
@@ -39,21 +40,23 @@
         <div class="container_2">
             <h1>Register</h1>
 
-            <!--Flash messages-->
-            {% if messages %}
+            <!--Flash messages (if/else condition check)-->
+            {% if messages %}<!--if messages-->
                 {% for message in messages %}
-                    {% if message.tags == 'error'%}
+                    {% if message.tags == 'error'%} <!-- {message} representing an error message -->
                         <center><h4 style="color: firebrick">{{message}}</h4></center>
-                    {% else %}
-                        <center><h4 style="color: dodgerblue">{{message}}</h4></center>
+                    {% else %}<!-- {message} represneting an succesful message -->
+                        <center><h4 style="color: green">{{message}}</h4></center>
                     {% endif %}
                 {% endfor %}
             {% endif %}
 
-
+            <!--Register Form-->
             <form method="POST"> 
 
-                <!-- what is this token for? -->
+                <!-- (used to prevent Cross-Site Request Forgery attacks!) -->
+                 <!--used for when user logs in or new session starts-->
+                 <!--creating an user's server-side session-->
                 {% csrf_token %}
 
                 <!--div container for (Username label, input, placeholder)-->
@@ -82,10 +85,10 @@
                 
                 <!--Extra links for redirecting user to login-->
                 <div class="link_container" style="margin-left:1px; margin-top:-200px;">
-                    Already have an account? <a href="{% url 'login' %}">Login</a>
+                    Already have an account? <a href="{% url 'login' %}">Login</a> <!--'url' Login link to login1.html-->
                     <br>
                     <br>
-                        <a href="{% url 'logout' %}">Logout</a>
+                        <a href="{% url 'logout' %}">Logout</a><!--Logout url link-->
                 </div>
 
             </form>
