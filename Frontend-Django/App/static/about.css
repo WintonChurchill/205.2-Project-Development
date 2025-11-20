@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background: #f4f4f4;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+/*About Us image 1 - indoor event space*/
+.image_1{ 
+	width: 250px;
+	height:295px; 
+	margin-left:60px;
+	margin-bottom:-255px;
+}
+
+/*About Us image 2 - outdoor event space*/
+.image_2{ 
+	width:250px;
+	height:295px; 
+	margin-left:60px;
+	margin-bottom:-360px;
+} 
+
+/*About Us Title */
+.title_1{
+    background-color: #7BB6E0;
+    height:50px;
+    color:white;
+    size: 100px;
+	box-sizing: border-box;
+}
+
+
+/*About Us container*/
+.main-content {
+	width: 90vw;
+	max-width: 700px;
+	margin: 5vh auto 0 auto;
+	padding: 2vw;
+	background: #fff;
+	border-radius: 1vw;
+	box-shadow: 0 0.5vw 2vw rgba(0,0,0,0.08);
+	min-height: 70vh;
+	margin-left: 670px;
+	margin-top:-10px;
+	border-color: #e8985e;
+	border-width:10px;
+}
+
+/*Booking_Button*/
+.button{
+	background: #6BE3E8;
+	border-color: aqua;
+	border-radius: 7px;
+	width:371px;
+	height:72px;
+	color:white;
+	margin-left: 190px;
+	margin:bottom -50px;
+}
+
+.title {
+	font-size: 3vw;
+	margin-bottom: 2vh;
+	text-align: center;
+}
+
+.para-body {
+	font-size: 1.5vw;
+	text-align: center;
+	margin-bottom: 4vh;
+}
+
+
+@media (max-width: 900px) {
+	.navbar-brand {
+		font-size: 5vw;
+	}
+	.navbar-links li a {
+		font-size: 3vw;
+	}
+	.main-content {
+		width: 98vw;
+		padding: 2vw 1vw;
+	}
+	.title {
+		font-size: 6vw;
+	}
+	.para-body {
+		font-size: 3vw;
+	}
+	.main-btn {
+		font-size: 3vw;
+		padding: 2vw 6vw;
+	}
+}
+
+
+/*Footer - Style*/
+footer{
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width:100%; 
+    background-color:#A9714B;
+    color:white;
+    text-align:center;
+    font-size: large;
+    padding-top:4px;
+    padding-bottom: 4px;
+    height:10%;
+}
