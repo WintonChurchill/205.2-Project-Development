@@ -1,7 +1,4 @@
 # 205.2-Project-Development
-Our 205 project
-
-Create venv by navigating to the folder, "python -m venv venv", pip -r requirements.txt
 
 ***USER MANUAL****
 For this project to succesfully run, the following requirements must be met to be able to succesfully open this project 
